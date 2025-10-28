@@ -27,7 +27,7 @@ ssd = RangeParameterConfig(name='ssd', parameter_type='float', bounds=(0, 5))
 data_path = r"./amcvc_data.csv"
 df = pd.read_csv(data_path)
 df = df.astype(float)   # Convert whole df to float
-X = df.iloc[:, :5]  # Independent variables
+X = df[['dioxolane', 'methanol', 'total_ch', 'cha', 'ssd']]  # Independent variables
 y1 = df['chx_d4']
 y2 = df['ssd_d4']
 y = pd.concat([y1, y2], axis = 1)
